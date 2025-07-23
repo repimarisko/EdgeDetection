@@ -1,0 +1,29 @@
+
+<!doctype html>
+<title>Interactive Edge Detection</title>
+<style>
+    body { font-family: sans-serif; text-align: center; }
+    #video-container { margin-top: 20px; }
+    select { font-size: 1.2em; padding: 5px; }
+</style>
+<h1>Interactive Live Edge Detection</h1>
+
+<label for="method">Choose Edge Detection Method:</label>
+<select id="method" onchange="changeMethod()">
+    <option value="canny" selected>Canny</option>
+    <option value="sobel">Sobel</option>
+    <option value="laplacian">Laplacian</option>
+    <option value="original">Original (Grayscale)</option>
+</select>
+
+<div id="video-container">
+    <img id="video-feed" src="/video_feed/canny" width="80%">
+</div>
+
+<script>
+    function changeMethod() {
+        var method = document.getElementById('method').value;
+        var videoFeed = document.getElementById('video-feed');
+        videoFeed.src = "/video_feed/" + method;
+    }
+</script>
