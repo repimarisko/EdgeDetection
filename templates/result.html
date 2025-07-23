@@ -1,0 +1,28 @@
+
+<!doctype html>
+<title>Edge Detection Result</title>
+<h1>Edge Detection Result</h1>
+<div>
+    <h2>Original Image</h2>
+    <img src="{{ url_for('uploaded_file', filename=original_image) }}" width="400">
+</div>
+<div>
+    <h2>Canny Edge Detection</h2>
+    <img src="{{ url_for('static_files', filename=edge_images.canny) }}" width="400">
+</div>
+<div>
+    <h2>Sobel X</h2>
+    <img src="{{ url_for('static_files', filename=edge_images.sobel_x) }}" width="400">
+</div>
+<div>
+    <h2>Sobel Y</h2>
+    <img src="{{ url_for('static_files', filename=edge_images.sobel_y) }}" width="400">
+</div>
+<div>
+    <h2>Sobel Combined</h2>
+    <img src="{{ url_for('static_files', filename=edge_images.sobel_combined) }}" width="400">
+</div>
+<div>
+    <h2>Laplacian</h2>
+    <img src="{{ url_for('static_files', filename=edge_images.laplacian) }}" width="400">
+</div>
